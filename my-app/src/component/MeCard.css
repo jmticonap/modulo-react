@@ -1,0 +1,12 @@
+.mecard{
+    background-color: aquamarine;
+    color: black;
+    border-radius: 1rem;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 1s;
+}
+.mecard:hover{
+    box-shadow: 0 0 1rem 1rem whitesmoke;
+    transition: all 1s;
+}
