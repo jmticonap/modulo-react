@@ -1,0 +1,16 @@
+
+.user-card{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 auto;
+    position: relative;
+    padding: 1rem;
+}
+
+.user-card img{
+    border-radius: 50%;
+}

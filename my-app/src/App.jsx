@@ -1,42 +1,56 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import MeCard from './component/MeCard'
+import Db from './components/db.js'
+import MeCard from './components/MeCard'
+import UseStateTarea1 from './components/UseStateTarea1/UseStateTarea1'
+import UseStateTarea2 from './components/UseStateTarea2/UseStateTarea2'
+import UseStateTarea3 from './components/UseStateTarea3/UseStateTarea3'
+import UserCard from './components/UserCard/UserCard'
 
 function App() {
   const [count, setCount] = useState(0)
-
-  const info = [
-    "My name is: Juan Manuel Ticona Pacheco",
-    "Favorite movie: Meet Joe Black",
-    "Favorite music: no one especial"]
+  const [encendido, setEncendido] = useState(false)
 
   return (
     <div className="App">
+      
+      {/* <fieldset>
+        <legend>23-08-2022</legend>
+      
+        ...
+
+      </fieldset> */}
+      
+      <fieldset>
+        <legend><h2>23-08-2022</h2></legend>
+        <p>UserCard</p>
+        <UserCard />
+        <br />
+
+        <p>Tare 1: useState</p>
+        <UseStateTarea1 />
+        <br />
+
+        <p>Tare 2: useState</p>
+        <UseStateTarea2 />
+        <br />
+
+        <p>Tare 3: </p>
+        <UseStateTarea3 encendido={encendido} setEncendido={setEncendido} />
+        <UseStateTarea3 encendido={encendido} setEncendido={setEncendido} />
+        <UseStateTarea3 encendido={encendido} setEncendido={setEncendido} />
+
+      </fieldset>
+      
+
+      <h2>22-08-2022</h2>
       <div className="card_container">
-        <MeCard title="About Me" list={info} color="aquamarine" />
-        <MeCard title="Hobbies" color="tomato" list={[
-          "Basketball",
-          "Coding",
-          "Watch movies with my childs"
-        ]} />
-        <MeCard title="My Free Time" color="skyblue" list={[
-          "Go out tu run",
-          "Make the garden"
-        ]} />
-        <MeCard title="Food" color="pink" list={[
-          "Cebiche",
-          "rebay"
-        ]} />
-        <MeCard title="Technologies" color="yellow" list={[
-          "HTML",
-          "JavaScript",
-          "CSS",
-          "ReactJS",
-          "Java",
-          "Spring Boot"
-        ]} />
+
+        { Db.map((itm, i) => <MeCard key={`me-card-${i}`} title={itm.title} color={itm.color} list={itm.list} />) }
+
       </div>
+      
     </div>
   )
 }
